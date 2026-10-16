@@ -26,6 +26,7 @@ Before running any requests, open the collection's **Variables** tab and fill in
 | `loginEmail` | Your TMS login email address. |
 | `loginPassword` | Your TMS login password. |
 | `clientId` | Your OAuth client identifier (provided by eShipping). |
+| `scope` | `tms` for client-credentials tokens (customer clients always use this one scope). |
 | `redirectUri` | The OAuth redirect URI configured for your client application. This must match the redirect URI registered for your TMS/eShipping OAuth client. |
 | `AccountNumber` | Your TMS account number. Returned as `accountNumber` by **GET Organizations**. |
 | `OrganizationId` | Your organization GUID. Returned as `id` by **GET Organizations**. |

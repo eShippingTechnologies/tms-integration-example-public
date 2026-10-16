@@ -1449,7 +1449,7 @@
     },
     {
       "key": "scope",
-      "value": "gatewayTrackings gatewayRates gatewayShipments"
+      "value": "tms"
     },
     {
       "key": "currentToken",
