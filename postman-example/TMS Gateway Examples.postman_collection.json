@@ -1391,14 +1391,14 @@
         "requests": {},
         "exec": [
           "// Runtime dates used by the shipment examples (same values Swagger generates for its examples).",
-          "// tomorrow = requested pickup date (today + 1), deliveryDate = requested delivery date (today + 3).",
+          "// tomorrow = requested pickup date (today + 1), deliveryDate = requested delivery date (today + 7).",
           "const fmt = (d) =>",
           "  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;",
           "const tomorrow = new Date();",
           "tomorrow.setDate(tomorrow.getDate() + 1);",
           "pm.collectionVariables.set(\"tomorrow\", fmt(tomorrow));",
           "const deliveryDate = new Date(tomorrow);",
-          "deliveryDate.setDate(deliveryDate.getDate() + 2);",
+          "deliveryDate.setDate(deliveryDate.getDate() + 6);",
           "pm.collectionVariables.set(\"deliveryDate\", fmt(deliveryDate));"
         ]
       }
