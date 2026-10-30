@@ -8,6 +8,15 @@ This Postman collection contains ready-to-run examples for authenticating with a
 2. Select the file `TMS Gateway Examples.postman_collection.json` from this folder.
 3. The collection and its variables will be imported automatically.
 
+## Swagger
+
+The same examples are available in the TMS Gateway Swagger UI, under the same request names, and can be run with **Try it out**:
+
+- Production: https://tmsgateway.engagedtechnologies.com/swagger
+- Staging: https://tmsgateway-staging.engagedtechnologies.com/swagger
+
+Swagger also describes every operation, field and allowed value. Use **Authorize** with a token from the Authentication requests below.
+
 ## Setup — Collection Variables
 
 Before running any requests, open the collection's **Variables** tab and fill in the values marked with placeholder text:
@@ -17,12 +26,15 @@ Before running any requests, open the collection's **Variables** tab and fill in
 | `loginEmail` | Your TMS login email address. |
 | `loginPassword` | Your TMS login password. |
 | `clientId` | Your OAuth client identifier (provided by eShipping). |
+| `scope` | `tms` for client-credentials tokens (customer clients always use this one scope). |
 | `redirectUri` | The OAuth redirect URI configured for your client application. This must match the redirect URI registered for your TMS/eShipping OAuth client. |
-| `AccountNumber` | Your TMS account number. |
-| `OrganizationId` | Your organization GUID (provided by eShipping). |
+| `AccountNumber` | Your TMS account number. Returned as `accountNumber` by **GET Organizations**. |
+| `OrganizationId` | Your organization GUID. Returned as `id` by **GET Organizations**. |
 | `subdomainSuffix` | Environment suffix. Use `-staging` for staging or leave blank for production. |
 
 The remaining variables (`currentToken`, `state`, `codeVerifier`, `codeChallenge`, `code`, `currentShipmentId`, `currentRateId`, `currentDocumentLink`, etc.) are **auto-populated** by the collection's scripts as you run requests. You do not need to set them manually.
+
+`tomorrow` (pickup date) and `deliveryDate` (pickup + 2 days) are set by the collection's pre-request script each time a request runs, in `YYYY-MM-DD` format, so the shipment examples always use future dates. In your own calls, send dates in the same format.
 
 ## Authentication
 
